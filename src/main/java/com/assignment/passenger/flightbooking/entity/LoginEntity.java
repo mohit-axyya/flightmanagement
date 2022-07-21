@@ -1,22 +1,29 @@
 package com.assignment.passenger.flightbooking.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "login")
 public class LoginEntity {
-    private String username;
+    @Id
+    private Integer username;
     private String password;
 
     public LoginEntity() {
     }
 
-    public LoginEntity(String username, String password) {
+    public LoginEntity(Integer username, String password) {
         this.username = username;
         this.password = password;
     }
 
-    public String getUsername() {
+    public Integer getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
+    public void setUsername(Integer username) {
         this.username = username;
     }
 
@@ -31,7 +38,7 @@ public class LoginEntity {
     @Override
     public String toString() {
         return "LoginEntity{" +
-                "username='" + username + '\'' +
+                "username=" + username +
                 ", password='" + password + '\'' +
                 '}';
     }
