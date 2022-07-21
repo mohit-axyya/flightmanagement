@@ -5,9 +5,7 @@ import com.assignment.passenger.flightbooking.service.PassengerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -37,5 +35,12 @@ public class PassengerUIController {
             model.addAttribute("passenger", passenger);
         }
         return "passengerdetails";
+    }
+
+    @PostMapping("/addpassenger")
+    public String savePassenger(@ModelAttribute Passenger passenger) {
+
+        this.passengerService.savePassenger(passenger);
+        return "addpassenger";
     }
 }
