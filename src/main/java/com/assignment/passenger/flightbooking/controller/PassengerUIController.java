@@ -43,4 +43,15 @@ public class PassengerUIController {
         this.passengerService.savePassenger(passenger);
         return "addpassenger";
     }
+
+    @GetMapping("/login")
+    public String goToLogin() {
+
+        return "login";
+    }
+
+    @GetMapping("/registerpassenger")
+    public String registerPassenger() {
+        return "registerpassenger";
+    }
 }
